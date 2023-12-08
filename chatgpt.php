@@ -1,13 +1,15 @@
 <?php
-// Simulate processing user input and generating a response
-function generateChatGPTResponse($userMessage) {
-    // You can replace this with an actual ChatGPT API call
-    return "This is a sample response from ChatGPT.";
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userMessage = $_POST['userMessage'];
-    $response = generateChatGPTResponse($userMessage);
-    echo $response;
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    // You can add further processing, validation, or save to a database here
+
+    // Simple response for demonstration purposes
+    echo "Thank you, $name, for contacting us!";
+} else {
+    header("Location: index.html");
+    exit();
 }
 ?>
